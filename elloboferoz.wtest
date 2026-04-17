@@ -1,0 +1,45 @@
+import feroz.*
+
+ test "El lobo no esta Saludable" {
+    feroz.crisis()
+    assert.notThat(feroz.estaSaludable())
+  }
+ test "el lobo aumenta o disminuye su peso en una cantidad indicada" {
+    feroz.crisis()
+    feroz.AumentarODisminuirPeso(20)
+    assert.equals(30, feroz.peso())
+  }
+  test "Que al lobo sufra una crisis que lo hace volver a su peso inicial" {
+    feroz.AumentarODisminuirPeso(20)
+    feroz.crisis()
+    assert.equals(10, feroz.peso())
+  }
+  test "feroz come algo su peso aumenta un 10% del peso ingerido." {
+    feroz.crisis()
+    feroz.comer()
+    assert.equals(12, feroz.peso())
+  }
+  test "feroz va corriendo hasta un lugar, su peso disminuye 1 unidad" {
+    feroz.crisis()
+    feroz.correr()
+    assert.equals(9, feroz.peso())
+  }
+  
+  /*test "si corre 38 metros su velocidad pasa a ser 24" {
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    jerry.cumplirAños()
+    tom.comer(jerry)
+    tom.correr(38)
+    assert.equals(24, tom.velocidad())
+  }
+
+  test "Tom al inicio no esta feliz" {
+    assert.notThat(tom.estaFeliz())
+  }
+
+  test "Tom ahora esta feliz" {
+    tom.comer(jerry)
+    assert.that(tom.estaFeliz())
+  }*/
