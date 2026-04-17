@@ -1,4 +1,6 @@
 import feroz.*
+import caperucita.*
+
 
  test "El lobo no esta Saludable" {
     feroz.crisis()
@@ -24,6 +26,23 @@ import feroz.*
     feroz.correr()
     assert.equals(9, feroz.peso())
   }
+  test "Peso de Caperucita con una Canasta de 6 Manzanas" {
+    assert.equals(61.2, caperucita.peso())
+  }
+  test "Peso de Caperucita con una Canasta de 10 Manzanas" {
+    canasta.modificarCantDeManzanas(10)
+    assert.equals(62, caperucita.peso())
+  }
+  test "Su abuelita pesa siempre 50" {
+    assert.equals(50, abuelita.peso())
+  }
+  
+
+
+
+  //PUNTO 4
+
+
   
   /*test "si corre 38 metros su velocidad pasa a ser 24" {
     tom.comer(jerry)
