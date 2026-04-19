@@ -1,5 +1,6 @@
 import feroz.*
 import caperucita.*
+import cazador.*
 
 
  test "El lobo no esta Saludable" {
@@ -41,6 +42,21 @@ import caperucita.*
 
 
   //PUNTO 4
+  test "Cuento punto 4" {
+    feroz.crisis()//reset lobo
+    canasta.modificarCantDeManzanas(6)//reset canasta
+    feroz.correr()//El lobo va corriendo hasta el bosque
+    feroz.correr()//el lobo corre a la casa de la abuelita
+    alimento.cambiarDePesoDelAlimento(abuelita.peso())
+    feroz.comer()//se come a la abuelita
+    canasta.AumentarODisminuirManzanas(-1)//Caperucita cruza el bosque y se le cae una manzana de su canasta
+    alimento.cambiarDePesoDelAlimento(caperucita.peso())
+    feroz.comer()//se come a caperucita con canasta
+    cazador.atacar(feroz)//Cazador ataca al lobo. lobo sufre crisis
+    alimento.cambiarDePesoDelAlimento(cazador.peso())
+    feroz.comer()//se come al cazador
+    assert.notThat(feroz.estaSaludable())//feroz esta saludable
+  }
 
 
   

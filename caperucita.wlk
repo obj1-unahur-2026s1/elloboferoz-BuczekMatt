@@ -10,6 +10,9 @@ object canasta {
     method modificarCantDeManzanas(unNumero) {
       cantDeManzanas = unNumero
     }
+    method AumentarODisminuirManzanas(numeroDeManzanas) {
+    cantDeManzanas = cantDeManzanas + numeroDeManzanas
+  }
     method peso() {
       return cantDeManzanas* manzanas.peso()
     }
